@@ -1,12 +1,12 @@
 var express = require('express');
 
 var exp = express();
-
+var handlers = require('./handlers')
 exp.use(express.static('client'));
 
 exp.get('/sentence', function(req, res) {
-
-  res.send('on 1983');
+  var textData = handlers.lang('hello')
+  res.send(textData);
 });
 
 exp.listen(1983);

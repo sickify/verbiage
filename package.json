@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/sickify/verbiage#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "nlp_compromise": "^6.5.3"
   }
 }
