@@ -5,7 +5,8 @@ var handlers = require('./handlers');
 exp.use(express.static('client'));
 
 exp.get('/sentence', function(req, res) {
-  var textData = handlers.lang('hello');
+  var sen = req.query.input
+  var textData = handlers.lang(sen);
   res.send(textData);
 });
 
