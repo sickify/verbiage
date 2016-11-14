@@ -20,6 +20,7 @@
   "homepage": "https://github.com/sickify/verbiage#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "nlp-ngram": "0.0.3",
     "nlp_compromise": "^6.5.3"
   }
 }
