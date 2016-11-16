@@ -20,9 +20,23 @@
       }
     })
   }
+
+  var countGet = function() {
+    var inputEl = document.getElementById('in');
+    var sentence = inputEl.value;
+    $.ajax({
+      type: "GET",
+      url: "/counter",
+      data: {input: sentence},
+      success: function(data) {
+        console.log(data);
+        $('#main').append('<p>' + JSON.stringify(data) + '</p>');
+      }
+    })
+  }
   </script>
   <div>
-    <input type="text" id="in" onchange="nlpGet()">
+    <input type="text" id="in" onchange="countGet()">
   </div>
   <div id="main"></div>
 </body>
