@@ -12,7 +12,7 @@ exp.get('/sentence', function(req, res) {
 
 exp.get('/counter', function(req, res) {
   var sen = req.query.input;
-  var countData = handlers.count(sen);
+  var countData = handlers.count(sen)[0];
   res.send(countData);
 });
 
