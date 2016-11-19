@@ -10,6 +10,10 @@ exp.get('/sentence', function(req, res) {
   res.send(textData);
 });
 
+exp.get('/partsOfSpeech', function(req, res) {
+  res.send('nouns, verbs, adjectives');
+});
+
 exp.get('/counter', function(req, res) {
   var sen = req.query.input;
   var countData = handlers.count(sen)[0];
