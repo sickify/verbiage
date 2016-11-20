@@ -11,7 +11,9 @@ exp.get('/sentence', function(req, res) {
 });
 
 exp.get('/partsOfSpeech', function(req, res) {
-  res.send('nouns, verbs, adjectives');
+  var sen = req.query.input;
+  var speechData = handlers.lang(sen);
+  res.send(speechData.terms[0].pos);
 });
 
 exp.get('/counter', function(req, res) {
