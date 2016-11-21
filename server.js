@@ -13,9 +13,8 @@ exp.get('/sentence', function(req, res) {
 exp.get('/partsOfSpeech', function(req, res) {
   var sen = req.query.input;
   var speechData = handlers.lang(sen).terms;
-  console.log(speechData);
   var partsData = speechData.map(val => {
-      return val.pos;
+      return [val.text, val.pos];
     });
   res.send(partsData);
 });
