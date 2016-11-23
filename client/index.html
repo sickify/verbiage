@@ -35,6 +35,20 @@
     })
   }
 
+  var partsCounter = function() {
+    var inputEl = document.getElementById('in');
+    var sentence = inputEl.value;
+    $.ajax({
+      type: "GET",
+      url: "/partsCounter",
+      data: {input: sentence},
+      success: function(data) {
+        console.log(data);
+        $('#main').append('<p>' + JSON.stringify(data) + '</p>');
+      }
+    })
+  }
+
   var countGet = function() {
     var inputEl = document.getElementById('in');
     var sentence = inputEl.value;
@@ -53,6 +67,7 @@
     <input type="text" id="in">
     <button id="nlpButton" onclick="nlpGet()">standard nlp</button>
     <button id="partsGet" onclick="partsGet()">parts of speech</button>
+    <button id="partsCounter" onclick="partsCounter()">parts counter</button>
     <button id="countGet" onclick="countGet()">word count</button>
   </div>
   <div id="main"></div>
