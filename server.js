@@ -22,7 +22,18 @@ exp.get('/partsOfSpeech', function(req, res) {
 exp.get('/partsCounter', function(req, res) {
   var sen = req.query.input;
   var speechData = handlers.lang(sen).terms;
-  res.send('{ Noun: 5, Verb: 6 }');
+  //need to loop through the terms to get out all of the parts and then add them to an object and increase their count like histo
+  var parts = {};
+  speechData.forEach((partObj) => {
+    for(var posKey in partObj.pos) {
+      if(parts[posKey]) {
+        parts[posKey] += 1;
+      } else {
+        parts[posKey] = 1;
+      }
+    }
+  });
+  res.send(parts);
 });
 
 exp.get('/counter', function(req, res) {
