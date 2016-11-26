@@ -7,10 +7,10 @@ var nlpGet = function() {
     data: {input: sentence},
     success: function(data) {
       console.log(data);
-      $('#main').append('<p>' + JSON.stringify(data) + '</p>');
+      $('#main').html('<p>' + JSON.stringify(data) + '</p>');
     }
-  })
-}
+  });
+};
 
 var partsGet = function() {
   var inputEl = document.getElementById('in');
@@ -21,10 +21,10 @@ var partsGet = function() {
     data: {input: sentence},
     success: function(data) {
       console.log(data);
-      $('#main').append('<p>' + JSON.stringify(data) + '</p>');
+      $('#main').html('<p>' + JSON.stringify(data) + '</p>');
     }
-  })
-}
+  });
+};
 
 var partsCounter = function() {
   var inputEl = document.getElementById('in');
@@ -35,10 +35,10 @@ var partsCounter = function() {
     data: {input: sentence},
     success: function(data) {
       console.log(data);
-      $('#main').append('<p>' + JSON.stringify(data) + '</p>');
+      $('#main').html('<p>' + JSON.stringify(data) + '</p>');
     }
-  })
-}
+  });
+};
 
 var countGet = function() {
   var inputEl = document.getElementById('in');
@@ -49,7 +49,7 @@ var countGet = function() {
     data: {input: sentence},
     success: function(data) {
       console.log(data);
-      $('#main').append('<p>' + JSON.stringify(data) + '</p>');
+      $('#main').html('<p>' + JSON.stringify(data) + '</p>');
     }
-  })
-}
+  });
+};
