@@ -20,8 +20,12 @@ var partsGet = function() {
     url: "/partsOfSpeech",
     data: {input: sentence},
     success: function(data) {
-      console.log(data);
-      $('#main').html('<p>' + JSON.stringify(data) + '</p>');
+      console.log(JSON.stringify(data));
+      $('#main').html('<table id="countList"><tr><th>Part</th><th>Count</th></tr></table>');
+      _.forEach(data, (val, key) => {
+        console.log(val, 'key', key);
+        $('#countList').append('<tr><td>' + key +'</td><td>' + val +'</td></tr>');
+      });
     }
   });
 };
@@ -49,7 +53,10 @@ var countGet = function() {
     data: {input: sentence},
     success: function(data) {
       console.log(data);
-      $('#main').html('<p>' + JSON.stringify(data) + '</p>');
+      $('#main').html('<table id="countList"><tr><th>Word</th><th>Count</th></tr></table>');
+      _.forEach(data, (val) => {
+        $('#countList').append('<tr><td>' + val.word +'</td><td>' + val.count +'</td></tr>');
+      });
     }
   });
 };
