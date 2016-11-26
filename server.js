@@ -23,16 +23,17 @@ exp.get('/partsCounter', function(req, res) {
   var sen = req.query.input;
   var speechData = handlers.lang(sen).terms;
   //need to loop through the terms to get out all of the parts and then add them to an object and increase their count like histo
-  var parts = {};
-  speechData.forEach((partObj) => {
-    for(var posKey in partObj.pos) {
-      if(parts[posKey]) {
-        parts[posKey] += 1;
+  var parts = speechData.reduce((acc, partsObj) => {
+    var obj = partsObj.pos;
+    for(var posKey in obj) {
+      if(acc[posKey]) {
+        acc[posKey] += 1;
       } else {
-        parts[posKey] = 1;
+        acc[posKey] = 1;
       }
     }
-  });
+    return acc;
+  }, {});
   res.send(parts);
 });
 
