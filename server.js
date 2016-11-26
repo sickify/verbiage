@@ -1,7 +1,7 @@
 var express = require('express');
 
 var exp = express();
-var handlers = require('./handlers');
+var handlers = require('./handlers/nlpHandlers.js');
 exp.use(express.static('client'));
 
 exp.get('/sentence', function(req, res) {
