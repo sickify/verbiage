@@ -39,7 +39,10 @@ var partsCounter = function() {
     data: {input: sentence},
     success: function(data) {
       console.log(data);
-      $('#main').html('<p>' + JSON.stringify(data) + '</p>');
+      $('#main').html('<table id="countList"><tr><th>Word</th><th>Count</th></tr></table>');
+      _.forEach(data, (val, key) => {
+        $('#countList').append('<tr><td>' + key +'</td><td>' + val +'</td></tr>');
+      });
     }
   });
 };
@@ -52,7 +55,6 @@ var countGet = function() {
     url: "/counter",
     data: {input: sentence},
     success: function(data) {
-      console.log(data);
       $('#main').html('<table id="countList"><tr><th>Word</th><th>Count</th></tr></table>');
       _.forEach(data, (val) => {
         $('#countList').append('<tr><td>' + val.word +'</td><td>' + val.count +'</td></tr>');
