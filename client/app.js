@@ -21,10 +21,12 @@ var partsGet = function() {
     data: {input: sentence},
     success: function(data) {
       console.log(JSON.stringify(data));
-      $('#main').html('<table id="countList"><tr><th>Part</th><th>Count</th></tr></table>');
-      _.forEach(data, (val, key) => {
-        console.log(val, 'key', key);
-        $('#countList').append('<tr><td>' + key +'</td><td>' + val +'</td></tr>');
+      $('#main').html('<table id="countList"><tr><th>Word</th><th>Type</th></tr></table>');
+      _.forEach(data, (val) => {
+        console.log(val);
+        _.forEach(val[1], (num, key) => {
+          $('#countList').append('<tr><td>' + val[0] +'</td><td>' + key +'</td></tr>');
+        })
       });
     }
   });
