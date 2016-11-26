@@ -6,7 +6,6 @@ var nlpGet = function() {
     url: "/sentence",
     data: {input: sentence},
     success: function(data) {
-      console.log(data);
       $('#main').html('<p>' + JSON.stringify(data) + '</p>');
     }
   });
@@ -23,7 +22,6 @@ var partsGet = function() {
       console.log(JSON.stringify(data));
       $('#main').html('<table id="countList"><tr><th>Word</th><th>Type</th></tr></table>');
       _.forEach(data, (val) => {
-        console.log(val);
         _.forEach(val[1], (num, key) => {
           $('#countList').append('<tr><td>' + val[0] +'</td><td>' + key +'</td></tr>');
         })
@@ -40,7 +38,6 @@ var partsCounter = function() {
     url: "/partsCounter",
     data: {input: sentence},
     success: function(data) {
-      console.log(data);
       $('#main').html('<table id="countList"><tr><th>Word</th><th>Count</th></tr></table>');
       _.forEach(data, (val, key) => {
         $('#countList').append('<tr><td>' + key +'</td><td>' + val +'</td></tr>');
