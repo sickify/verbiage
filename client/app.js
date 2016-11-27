@@ -1,6 +1,5 @@
 var nlpGet = function() {
-  var inputEl = document.getElementById('in');
-  var sentence = inputEl.value;
+  var sentence = document.getElementById('in').value;
   $.ajax({
     type: "GET",
     url: "/sentence",
@@ -12,8 +11,7 @@ var nlpGet = function() {
 };
 
 var partsGet = function() {
-  var inputEl = document.getElementById('in');
-  var sentence = inputEl.value;
+  var sentence = document.getElementById('in').value;
   $.ajax({
     type: "GET",
     url: "/partsOfSpeech",
@@ -24,15 +22,14 @@ var partsGet = function() {
       _.forEach(data, (val) => {
         _.forEach(val[1], (num, key) => {
           $('#countList').append('<tr><td>' + val[0] +'</td><td>' + key +'</td></tr>');
-        })
+        });
       });
     }
   });
 };
 
 var partsCounter = function() {
-  var inputEl = document.getElementById('in');
-  var sentence = inputEl.value;
+  var sentence = document.getElementById('in').value;
   $.ajax({
     type: "GET",
     url: "/partsCounter",
@@ -47,8 +44,7 @@ var partsCounter = function() {
 };
 
 var countGet = function() {
-  var inputEl = document.getElementById('in');
-  var sentence = inputEl.value;
+  var sentence = document.getElementById('in').value;
   $.ajax({
     type: "GET",
     url: "/counter",
