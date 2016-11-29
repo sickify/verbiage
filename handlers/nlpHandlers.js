@@ -11,5 +11,10 @@ var count = function(text) {
   return nlpText.ngram();
 };
 
+var getSpeechData = function(sentence) {
+  return lang(sentence).terms;
+};
+
 module.exports.lang = lang;
 module.exports.count = count;
+module.exports.getSpeechData = getSpeechData;
