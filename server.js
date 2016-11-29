@@ -11,26 +11,26 @@ exp.get('/sentence', function(req, res) {
 });
 
 exp.get('/partsOfSpeech', function(req, res) {
-  var speechData = handlers.getSpeechData(req.query.input);
-  var partsData = speechData.map(val => {
+  var partsData = handlers.getSpeechData(req.query.input)
+    .map(val => {
       return [val.text, val.pos];
     });
   res.send(partsData);
 });
 
 exp.get('/partsCounter', function(req, res) {
-  var speechData = handlers.getSpeechData(req.query.input);
-  var parts = speechData.reduce((acc, partsObj) => {
-    var obj = partsObj.pos;
-    for(var posKey in obj) {
-      if(acc[posKey]) {
-        acc[posKey] += 1;
-      } else {
-        acc[posKey] = 1;
+  var parts = handlers.getSpeechData(req.query.input)
+    .reduce((acc, partsObj) => {
+      var obj = partsObj.pos;
+      for(var posKey in obj) {
+        if(acc[posKey]) {
+          acc[posKey] += 1;
+        } else {
+          acc[posKey] = 1;
+        }
       }
-    }
-    return acc;
-  }, {});
+      return acc;
+    }, {});
   res.send(parts);
 });
 
