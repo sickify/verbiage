@@ -1,15 +1,3 @@
-var nlpGet = function() {
-  var sentence = document.getElementById('in').value;
-  $.ajax({
-    type: "GET",
-    url: "/sentence",
-    data: {input: sentence},
-    success: function(data) {
-      $('#main').html('<p>' + JSON.stringify(data) + '</p>');
-    }
-  });
-};
-
 var partsGet = function() {
   var sentence = document.getElementById('in').value;
   $.ajax({
@@ -17,7 +5,6 @@ var partsGet = function() {
     url: "/partsOfSpeech",
     data: {input: sentence},
     success: function(data) {
-      console.log(JSON.stringify(data));
       $('#main').html('<table id="countList"><tr><th>Word</th><th>Type</th></tr></table>');
       _.forEach(data, (val) => {
         _.forEach(val[1], (num, key) => {
