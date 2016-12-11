@@ -3,12 +3,18 @@ angular.module('verbiage.services', [])
     var counter = function() {
       return $http.get('/counter')
         .then(function(data) {
-          $scope.parts = data;
-        }, function(err) {
-          console.log(err);
+          return data;
         });
     };
+    var parts = function() {
+      return $http.get('/partsOfSpeech')
+        .then(function(data) {
+          return data;
+        });
+    };
+
     return {
-      counter;
+      counter,
+      parts
     };
   });
