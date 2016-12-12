@@ -12,9 +12,15 @@ angular.module('verbiage.services', [])
           return data;
         });
     };
-
+    var partsCounter = function() {
+      return $http.get('/partsCounter')
+        .then(function(data) {
+          return data;
+        });
+    };
     return {
       counter,
-      parts
+      parts,
+      partsCounter
     };
   });
