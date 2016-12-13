@@ -1,16 +1,16 @@
 angular.module('verbiage.wordCount' [])
   .controller('WordCountController', function($scope, Paths){
-    $scope.parts = {};
+    $scope.wordCount = {};
 
     var initPaths = function() {
       Paths.counter()
         .then(function (data) {
-          $scope.parts = data;
+          $scope.wordCount = data;
         })
         .catch(function(err) {
           console.log(err);
         });
     };
-
+    
     initPaths();
   });
