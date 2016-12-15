@@ -2,7 +2,7 @@ angular.module('verbiage.wordCount' [])
   .controller('WordCountController', function($scope, Paths){
     $scope.wordCount = {};
 
-    var initPaths = function() {
+    var getPaths = function() {
       Paths.counter()
         .then(function (data) {
           $scope.wordCount = data;
@@ -11,6 +11,6 @@ angular.module('verbiage.wordCount' [])
           console.log(err);
         });
     };
-    
-    initPaths();
+
+    getPaths();
   });
