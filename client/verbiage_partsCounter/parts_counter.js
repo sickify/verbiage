@@ -1,7 +1,8 @@
 angular.module('verbiage.partsCounter' [])
   .controller('PartsCounterController', function($scope, $http){
     $scope.partsCounter = {};
-    var initPaths = function() {
+
+    var getPaths = function() {
       Paths.partsCounter()
         .then(function (data) {
           $scope.partsCounter = data;
@@ -10,4 +11,5 @@ angular.module('verbiage.partsCounter' [])
           console.log(err);
         });
     };
+    getPaths();
   });
