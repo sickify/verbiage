@@ -1,4 +1,4 @@
-angular.module('verbiage.wordCount' [])
+angular.module('verbiage.wordCount', [])
   .controller('WordCountController', function($scope, Paths){
     $scope.wordCount = {};
 

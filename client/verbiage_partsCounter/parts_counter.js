@@ -1,4 +1,4 @@
-angular.module('verbiage.partsCounter' [])
+angular.module('verbiage.partsCounter', [])
   .controller('PartsCounterController', function($scope, $http){
     $scope.partsCounter = {};
 

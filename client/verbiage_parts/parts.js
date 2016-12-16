@@ -1,7 +1,7 @@
-angular.module('verbiage.parts' [])
+angular.module('verbiage.parts', [])
   .controller('PartsController', function($scope, $http){
     $scope.parts = {};
-    
+
     var initPaths = function() {
       Paths.parts()
         .then(function (data) {
@@ -13,4 +13,4 @@ angular.module('verbiage.parts' [])
     };
 
     initPaths();
-  })
+  });
