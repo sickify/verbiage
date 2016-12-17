@@ -1,5 +1,5 @@
 angular.module('verbiage.parts', [])
-  .controller('PartsController', function($scope, $http){
+  .controller('PartsController', function($scope, Paths){
     $scope.parts = {};
 
     var initPaths = function() {
