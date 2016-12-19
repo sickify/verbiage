@@ -1,4 +1,4 @@
-angular.module('verbiage.services', [])
+angular.module('verbiage')
   .factory('Paths', function($http) {
     var counter = function() {
       return $http.get('/counter')
@@ -19,8 +19,8 @@ angular.module('verbiage.services', [])
         });
     };
     return {
-      counter,
-      parts,
-      partsCounter
+      counter: counter,
+      parts: parts,
+      partsCounter: partsCounter
     };
   });
