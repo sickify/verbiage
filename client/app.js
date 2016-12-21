@@ -3,7 +3,7 @@ angular.module('verbiage', [])
     $scope.pathsResults = [];
     $scope.input = "";
     $scope.parts = function() {
-      Paths.parts()
+      Paths.parts($scope.input)
         .then(function (data) {
           $scope.pathsResults = data;
           console.log($scope.input);
@@ -15,7 +15,7 @@ angular.module('verbiage', [])
     };
 
     $scope.partsCounter = function() {
-      Paths.partsCounter()
+      Paths.partsCounter($scope.input)
         .then(function (data) {
           $scope.pathsResults = data;
           console.log(data.data);
@@ -26,7 +26,7 @@ angular.module('verbiage', [])
     };
 
     $scope.counter = function() {
-      Paths.counter()
+      Paths.counter($scope.input)
         .then(function (data) {
           $scope.pathsResults = data;
           console.log(data.data);
