@@ -1,7 +1,7 @@
 angular.module('verbiage')
   .factory('Paths', function($http) {
     var counter = function(input) {
-      return $http.get('/counter')
+      return $http.get('/counter/input')
         .then(function(data) {
           console.log('from factory ', data);
           return data;
@@ -11,7 +11,7 @@ angular.module('verbiage')
         });
     };
     var parts = function(input) {
-      return $http.get('/partsOfSpeech')
+      return $http.get('/partsOfSpeech/input')
         .then(function(data) {
           console.log('from factory ', data);
           return data;
@@ -21,7 +21,7 @@ angular.module('verbiage')
         });
     };
     var partsCounter = function(input) {
-      return $http.get('/partsCounter')
+      return $http.get('/partsCounter/input')
         .then(function(data) {
           console.log('from factory ', data);
           return data;
