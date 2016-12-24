@@ -6,8 +6,6 @@ angular.module('verbiage', [])
       Paths.parts($scope.input)
         .then(function (data) {
           $scope.pathsResults = data;
-          console.log($scope.input);
-          console.log(data.data);
         })
         .catch(function(err) {
           console.log(err);
@@ -18,7 +16,6 @@ angular.module('verbiage', [])
       Paths.partsCounter($scope.input)
         .then(function (data) {
           $scope.pathsResults = data;
-          console.log(data.data);
         })
         .catch(function(err) {
           console.log(err);
@@ -29,7 +26,6 @@ angular.module('verbiage', [])
       Paths.counter($scope.input)
         .then(function (data) {
           $scope.pathsResults = data;
-          console.log(data.data);
         })
         .catch(function(err) {
           console.log(err);

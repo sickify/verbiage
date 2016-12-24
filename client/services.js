@@ -3,7 +3,6 @@ angular.module('verbiage')
     var counter = function(input) {
       return $http.get(`/counter/${input}`)
         .then(function(data) {
-          console.log('from factory ', data);
           return data;
         })
         .catch(function(err) {
@@ -13,7 +12,6 @@ angular.module('verbiage')
     var parts = function(input) {
       return $http.get(`/partsOfSpeech/${input}`)
         .then(function(data) {
-          console.log('from factory ', data);
           return data;
         })
         .catch(function(err) {
@@ -23,7 +21,6 @@ angular.module('verbiage')
     var partsCounter = function(input) {
       return $http.get(`/partsCounter/${input}`)
         .then(function(data) {
-          console.log('from factory ', data);
           return data;
         })
         .catch(function(err) {
