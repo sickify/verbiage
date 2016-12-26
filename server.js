@@ -11,7 +11,8 @@ exp.get('/sentence', function(req, res) {
 });
 
 exp.get('/partsOfSpeech', function(req, res) {
-  var partsData = handlers.getSpeechData(req.query.input)
+  var sen = req.query.input;
+  var partsData = handlers.getSpeechData(sen)
     .map(val => {
       return [val.text, val.pos];
     });
@@ -19,7 +20,8 @@ exp.get('/partsOfSpeech', function(req, res) {
 });
 
 exp.get('/partsCounter', function(req, res) {
-  var parts = handlers.getSpeechData(req.query.input)
+  var sen = req.query.input;
+  var parts = handlers.getSpeechData(sen)
     .reduce((acc, partsObj) => {
       var obj = partsObj.pos;
       for(var posKey in obj) {
