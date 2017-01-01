@@ -9,6 +9,7 @@ var partsGet = function() {
       _.forEach(data, (val) => {
         _.forEach(val[1], (num, key) => {
           $('#countList').append('<tr><td>' + val[0] +'</td><td>' + key +'</td></tr>');
+          $('#main').prepend('<h3>Parts of Speech</h3>')
         });
       });
     }
@@ -25,6 +26,7 @@ var partsCounter = function() {
       $('#main').html('<table id="countList"><tr><th>Word</th><th>Count</th></tr></table>');
       _.forEach(data, (val, key) => {
         $('#countList').append('<tr><td>' + key +'</td><td>' + val +'</td></tr>');
+        $('#main').prepend('<h3>Parts</h3>');
       });
     }
   });
@@ -40,6 +42,7 @@ var countGet = function() {
       $('#main').html('<table id="countList"><tr><th>Word</th><th>Count</th></tr></table>');
       _.forEach(data, (val) => {
         $('#countList').append('<tr><td>' + val.word +'</td><td>' + val.count +'</td></tr>');
+        $('#main').prepend('<h3>Word Counter</h3>')
       });
     }
   });
